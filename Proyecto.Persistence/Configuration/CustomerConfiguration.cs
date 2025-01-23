@@ -18,6 +18,7 @@ namespace Proyecto.Persistence.Configuration
             entityBuilder.HasMany(x => x.Bookings)
             .WithOne(x => x.Customers)
             .HasForeignKey(x => x.CustomerId);
+
         }
     }
 }

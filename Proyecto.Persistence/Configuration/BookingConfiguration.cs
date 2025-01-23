@@ -17,6 +17,7 @@ namespace Proyecto.Persistence.Configuration
             entityBuilder.Property(x => x.Type).IsRequired();
             entityBuilder.Property(x => x.CustomerId).IsRequired();
             entityBuilder.Property(x => x.UserId).IsRequired();
+            entityBuilder.Property(x => x.ProductId).IsRequired();
 
             entityBuilder.HasOne(x => x.Users)
                 .WithMany(x => x.Bookings)
@@ -25,6 +26,11 @@ namespace Proyecto.Persistence.Configuration
             entityBuilder.HasOne(x => x.Customers)
                 .WithMany(x => x.Bookings)
                 .HasForeignKey(x => x.CustomerId);
+
+            entityBuilder.HasOne(x => x.Products)
+            .WithMany(x => x.Bookings)
+            .HasForeignKey(x => x.ProductId);
+
         }
     }
 }

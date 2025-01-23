@@ -1,4 +1,5 @@
 ﻿using Proyecto.Domain.Entities.Customer;
+using Proyecto.Domain.Entities.Product;
 using Proyecto.Domain.Entities.User;
 using System;
 using System.Collections.Generic;
@@ -18,5 +19,7 @@ namespace Proyecto.Domain.Entities.Booking
         public CustomerEntity Customers { get; set; }
         public int UserId { get; set; }
         public UserEntity Users { get; set; }
+        public int ProductId { get; set; }
+        public ProductEntity Products { get; set; }
     }
 }
